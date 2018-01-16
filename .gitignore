@@ -1,0 +1,9 @@
+.DS_Store
+node_modules
+coverage
+.test_gen_*
+lib/
+*.log
+coverage_jest_raw
+*.sqlite
+test.json

@@ -1,0 +1,29 @@
+{
+  "name": "gabliam-multi-conf-loader",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "module": "lib/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf lib && tsc -p tsconfig.build.json"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "dependencies": {
+    "debug": "^3.1.0",
+    "js-yaml": "^3.10.0",
+    "lodash": "^4.17.4",
+    "tslib": "^1.8.0"
+  },
+  "devDependencies": {
+    "@types/debug": "^0.0.30",
+    "@types/js-yaml": "^3.10.1",
+    "@types/lodash": "^4.14.85",
+    "@types/node": "^9.3.0",
+    "rimraf": "^2.6.2",
+    "typescript": "^2.6.2"
+  }
+}
