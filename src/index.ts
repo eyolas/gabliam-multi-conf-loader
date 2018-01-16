@@ -8,7 +8,7 @@ import { promisify } from 'util';
 const glob = promisify(require('glob')); // require and no import for typings bug
 const readFile = promisify(fs.readFile);
 
-const debug = d('vgo:FileLoader');
+const debug = d('gabliam-multi-conf-loader:FileLoader');
 
 async function loadConstant(
   folder: string,
