@@ -6,12 +6,24 @@
   "module": "lib/index.js",
   "license": "MIT",
   "scripts": {
-    "build": "rimraf lib && tsc -p tsconfig.build.json"
+    "precommit": "lint-staged",
+    "prettier": "prettier --single-quote --write --parser typescript {src,test}/**/*.ts",
+    "lint": "tslint --project tsconfig.json '{src,test}/**/*.ts'",
+    "build": "rimraf lib && tsc -p tsconfig.build.json",
+    "prepublish": "publish-please guard",
+    "publish-please": "publish-please"
   },
   "files": [
     "lib",
     "src"
   ],
+  "lint-staged": {
+    "*.ts": [
+      "prettier --single-quote --write --parser typescript",
+      "tslint --project tsconfig.json",
+      "git add"
+    ]
+  },
   "dependencies": {
     "debug": "^3.1.0",
     "js-yaml": "^3.10.0",
@@ -23,7 +35,14 @@
     "@types/js-yaml": "^3.10.1",
     "@types/lodash": "^4.14.85",
     "@types/node": "^9.3.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",
+    "prettier": "^1.10.2",
+    "publish-please": "^2.3.1",
     "rimraf": "^2.6.2",
-    "typescript": "^2.6.2"
+    "tslint": "^5.9.1",
+    "tslint-eslint-rules": "^4.1.1",
+    "typescript": "^2.6.2",
+    "vrsource-tslint-rules": "^5.8.0"
   }
 }
