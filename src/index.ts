@@ -2,7 +2,7 @@ import * as yaml from 'js-yaml';
 import * as fs from 'fs';
 import * as _ from 'lodash';
 import * as d from 'debug';
-import { promisify } from 'util';
+import { promisify, inspect } from 'util';
 
 // Promisify
 const glob = promisify(require('glob')); // require and no import for typings bug
@@ -109,7 +109,7 @@ export default async function FileLoader(
       );
     }
   }
-  debug('loadedConfig', require('util').inspect(config, { depth: null }));
+  debug('loadedConfig', inspect(config, { depth: null }));
   return config;
 }
 
