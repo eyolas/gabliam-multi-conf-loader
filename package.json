@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "precommit": "lint-staged",
-    "prettier": "prettier --single-quote --write --parser typescript {src,test}/**/*.ts",
+    "prettier": "prettier --single-quote --write {src,test}/**/*.ts",
     "lint": "tslint --project tsconfig.json '{src,test}/**/*.ts'",
     "build": "rimraf lib && tsc -p tsconfig.build.json",
     "prepublish": "publish-please guard",
@@ -19,7 +19,7 @@
   ],
   "lint-staged": {
     "*.ts": [
-      "prettier --single-quote --write --parser typescript",
+      "prettier --single-quote --write",
       "tslint --project tsconfig.json",
       "git add"
     ]

@@ -61,7 +61,7 @@ export default async function FileLoader(
   // create tag config
   const ConfigYamlType = new yaml.Type('!config', {
     kind: 'scalar',
-    construct: function (data) {
+    construct: function(data) {
       return _.get(constants, data, {});
     },
     instanceOf: Object
